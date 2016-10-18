@@ -1,38 +1,32 @@
- /* file: CelsiusToFahrenit.java
-  * author: Alexander Richin
-  * course: CMPT 220
-  * assignment: Lab 1 Question 2.1
-  * due date: 09/07/2016
-  * version: 1.3
-  *
-  * This file contains the declaration of CelsiusToFahrenheit abrastract data 
-  * type.
-  */
-
-import java.util.Scanner;
-
-/**
- * CelsiusToFahrenheit
- * 
- * This class implements an equation to calculate the conversion of
- * celsisus to fahrenheit. 
+/* file: celsiusToFahrenheit.java
+ * author: Alexander Richin
+ * course: CMPT 220
+ * assignment: Lab 4 Question 6.8
+ * due date: 09/28/2016
+ * version: 1.3
+ *
+ * This file contains a table of degrees in both
+ * Celsius and Fahrenheit. Equations are used to 
+ * calculate each value.
  */
-
-public class CelsiusToFahrenheit {
+public class celsiusToFahrenheit {
   public static void main(String[] args) {
-    // Create a Scanner
-    Scanner input = new Scanner(System.in);
-    
-    // Receives the degree in Celsius
-    System.out.print("Enter a degree in Celsius: ");
-   
-    // Allows you to type in a decimal for Celsius
-    double celsius = input.nextDouble();
-    
-    // Allows you to convert into a decimal for Fahrenheit
-    double fahrenheit = (celsius * (9.0 / 5) + 32) ;
-
-    // Displays the results of the conversion of Celsius to Fahrenheit
-    System.out.println("Celsius " + celsius + " is " + fahrenheit + " in Fahrenheit");
+	// Displays output
+    System.out.format("    Celsius  Fahrenheit |   Fahrenheit   Celsius");
+	
+    for (double cel=40.0, far=120; cel>30.0; cel-=1, far-=10) {
+	  double[] myList = new double[100];
+	  // Displays output
+	  System.out.format("%10.1f %10.1f   | %10.1f %10.1f \n", 
+			      	    cel, Cel2Far(cel), far, Far2Cel(far));
+	}
+  }
+  // Calculates celsius
+  public static double Cel2Far(double cel) {
+    return (9.0)/5.0 * (cel +32.0);
+  }
+  // Calculates fahrenheit
+  public static double Far2Cel(double far) {
+    return (5.0/9.0) * (far - 32.0);
   }
 }
