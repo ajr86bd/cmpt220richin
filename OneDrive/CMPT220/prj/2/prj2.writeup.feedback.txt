@@ -1,0 +1,13 @@
+37 pts
+
+The project is another password generator.
+
+However, there are some issues...
+Writeup:
+- It does not follow the structure required. Abstract, Introduction, etc. -1pt
+
+Code:
+- You are using tabs. -1pt
+
+- There is incorrect indentation. -1pt
+
